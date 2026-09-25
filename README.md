@@ -1,6 +1,6 @@
 # SignalGuard Email Intelligence
 
-SignalGuard is a production-shaped deep-learning email spam classifier built from the supplied SMS `Embedding -> LSTM -> sigmoid` example. The recurrent model is preserved, but the data contract, preprocessing, training split, inference artifacts, web API, upload handling, and evaluation are email-specific.
+SignalGuard is a production-shaped deep-learning email spam classifier. 
 
 ## What it does
 
