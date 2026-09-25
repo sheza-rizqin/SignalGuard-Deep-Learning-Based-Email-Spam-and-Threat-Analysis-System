@@ -1,0 +1,21 @@
+"""Temporary date profiler - deleted after inspection."""
+from __future__ import annotations
+
+import pandas as pd
+
+TARGETS = [
+    ("CEAS_08.csv", "date"),
+    ("Nazario.csv", "date"),
+    ("Nigerian_Fraud.csv", "date"),
+    ("SpamAssasin.csv", "date"),
+]
+
+for name, column in TARGETS:
+    frame = pd.read_csv(f"data/raw/{name}", usecols=[column, "label"])
+    parsed = pd.to_datetime(frame[column], format="mixed", utc=True, errors="coerce")
+    print(f"--- {name}: rows={len(frame)} parsed={int(parsed.notna().sum())} unparsed={int(parsed.isna().sum())}")
+    print(f"    range: {parsed.min()}  ->  {parsed.max()}")
+    by_year = parsed.dt.year.value_counts().sort_index()
+    labels = frame.groupby("label").size().to_dict()
+    print(f"    labels: {labels}")
+    print(f"    per-year: {by_year.to_dict()}")

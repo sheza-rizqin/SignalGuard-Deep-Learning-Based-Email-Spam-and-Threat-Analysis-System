@@ -1,0 +1,18 @@
+{
+  "architecture": "Embedding(96) -> SpatialDropout1D -> LSTM(64) -> Dense(32) -> sigmoid",
+  "sequence_length": 300,
+  "vocabulary_size": 20000,
+  "threshold": 0.5,
+  "dataset": [
+    "CEAS_08.csv",
+    "Enron.csv",
+    "Ling.csv",
+    "Nazario.csv",
+    "Nigerian_Fraud.csv",
+    "SpamAssasin.csv"
+  ],
+  "seed": 42,
+  "train_count": 61676,
+  "validation_count": 7710,
+  "test_count": 7710
+}

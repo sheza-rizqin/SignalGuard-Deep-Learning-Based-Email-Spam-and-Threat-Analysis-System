@@ -1,0 +1,15 @@
+{
+  "architecture": "Embedding(96) -> SpatialDropout1D(0.25) -> LSTM(64, L2) -> Dense(32, L2) -> Dropout(0.2) -> sigmoid",
+  "sequence_length": 300,
+  "vocabulary_size": 20000,
+  "threshold": 0.5,
+  "l2_strength": 1e-05,
+  "label_smoothing": 0.05,
+  "dataset": [
+    "CEAS_08.csv"
+  ],
+  "seed": 42,
+  "train_count": 27324,
+  "validation_count": 3415,
+  "test_count": 3416
+}
